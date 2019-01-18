@@ -26,5 +26,7 @@ fi
 if [ ! -f $GoInstallDir/go/bin/go ]; then
   echo "       **ERROR** Could not download go"
   exit 1
+else 
+  echo "Downloaded go $GO_VERSION"
 fi
 
