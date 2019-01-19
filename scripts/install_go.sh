@@ -12,7 +12,7 @@ if [ ! -f $GoInstallDir/go/bin/go ]; then
 
   echo "-----> Download go ${GO_VERSION}"
   echo $URL
-  curl -s -L -v --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz
+  curl -s -L -v --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz --resolve buildpacks.cloudfoundry.org:443:54.230.211.108
   echo "download step done"
   DOWNLOAD_MD5=$(md5sum /tmp/go.tar.gz | cut -d ' ' -f 1)
 
