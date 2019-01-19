@@ -20,7 +20,6 @@ if [ ! -f $GoInstallDir/go/bin/go ]; then
     echo "       **ERROR** MD5 mismatch: got $DOWNLOAD_MD5 expected $GO_MD5"
     exit 1
   fi
-  ls =l $GoInstallDir
   echo "EXTR2 $GoInstallDir"
   tar xzf /tmp/go.tar.gz -C $GoInstallDir
   rm /tmp/go.tar.gz
