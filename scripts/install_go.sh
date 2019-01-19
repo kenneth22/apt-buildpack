@@ -12,7 +12,7 @@ if [ ! -f $GoInstallDir/go/bin/go ]; then
 
   echo "-----> Download go ${GO_VERSION}"
   echo $URL
-  curl -s -L --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz
+  curl -s -L -v --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz
   echo "download step done"
   DOWNLOAD_MD5=$(md5sum /tmp/go.tar.gz | cut -d ' ' -f 1)
 
