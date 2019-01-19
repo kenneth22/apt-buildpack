@@ -8,11 +8,11 @@ mkdir -p $GoInstallDir
 
 if [ ! -f $GoInstallDir/go/bin/go ]; then
   GO_MD5="0571886e9b9ba07773b542a11e9859a4"
-  URL=https://buildpacks.cloudfoundry.org/dependencies/go/go${GO_VERSION}.linux-amd64-${GO_MD5:0:8}.tar.gz
+  URL=https://artifactory.platform.manulife.io/artifactory/bin-local/go${GO_VERSION}.linux-amd64-${GO_MD5:0:8}.tar.gz
 
   echo "-----> Download go ${GO_VERSION}"
   echo $URL
-  curl -s -L -v --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz --resolve buildpacks.cloudfoundry.org:443:54.230.211.108
+  curl -s -L -v --retry 15 --retry-delay 2 $URL -o /tmp/go.tar.gz
   echo "download step done"
   DOWNLOAD_MD5=$(md5sum /tmp/go.tar.gz | cut -d ' ' -f 1)
 
